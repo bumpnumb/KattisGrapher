@@ -1,0 +1,8 @@
+C:\Users\fennh\source\repos\KattisGrapher\Server\bin\Debug\netcoreapp2.1\Server.deps.json
+C:\Users\fennh\source\repos\KattisGrapher\Server\bin\Debug\netcoreapp2.1\Server.runtimeconfig.json
+C:\Users\fennh\source\repos\KattisGrapher\Server\bin\Debug\netcoreapp2.1\Server.runtimeconfig.dev.json
+C:\Users\fennh\source\repos\KattisGrapher\Server\bin\Debug\netcoreapp2.1\Server.dll
+C:\Users\fennh\source\repos\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.csprojAssemblyReference.cache
+C:\Users\fennh\source\repos\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.csproj.CoreCompileInputs.cache
+C:\Users\fennh\source\repos\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.AssemblyInfoInputs.cache
+C:\Users\fennh\source\repos\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.AssemblyInfo.cs

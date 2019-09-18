@@ -1,0 +1,16 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+#chart {
+    /*max-width: 1000px;*/
+    margin: 35px auto;
+    opacity: 0.9;
+}
+
+#timeline-chart .apexcharts-toolbar {
+    opacity: 1;
+    border: 0;
+}
