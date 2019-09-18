@@ -34,5 +34,18 @@ namespace Server.modules
                 entity.Property(e => e.Value).IsRequired();
             });
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+            //optionsBuilder.UseLoggerFactory(_myLoggerFactory);
+            //db info is in gitignore file.
+            //fetch file and read connectionstring.
+
+
+            config c = new config();
+            string fp = "..\\..\\..\\..\\.\\config.json";
+            optionsBuilder.UseSqlServer(c.Read(fp));
+        }
     }
 }

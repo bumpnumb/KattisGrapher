@@ -16,3 +16,4 @@ D:\Git\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.AssemblyInfoInputs.ca
 D:\Git\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.AssemblyInfo.cs
 D:\Git\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.dll
 D:\Git\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.pdb
+D:\Git\KattisGrapher\Server\obj\Debug\netcoreapp2.1\Server.csprojAssemblyReference.cache

@@ -1,0 +1,7 @@
+{
+   "Server": "192.168.1.177",
+   "port": "3306",
+   "database": "kattis",
+   "user": "stig",
+   "password": "fmer14"
+}

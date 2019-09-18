@@ -42,7 +42,9 @@ namespace Server.modules
                 string text = File.ReadAllText(filepath);
                 config c = new config();
                 JsonConvert.PopulateObject(text, c);
-                return "Server=" + c.Server + "; port=" + c.Port + "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password + "; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime + ";";
+                //return "Server=" + c.Server + /*"; port=" + c.Port +*/ "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password + /*"; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime + */";";
+                //"Server=yourservername;Database=replacethisstring;User ID=youruserid;Password=yourpassword;TrustServerCertificate=True;Trusted_Connection=False;Connection Timeout=30;Integrated Security=False;Persist Security Info=False;Encrypt=True;MultipleActiveResultSets=True;"
+                return "Server=" + c.Server +/* ";Port=" + c.Port +*/ ";Database=" + c.Database + ";Uid=" + c.User + ";Pwd=" + c.Password + ";";
             }
         }
     }
