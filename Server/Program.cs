@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server.modules;
+using System;
 
 namespace Server
 {
@@ -6,7 +7,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ClientHandler ch = new ClientHandler();
         }
     }
 }

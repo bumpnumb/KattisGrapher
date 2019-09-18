@@ -151,28 +151,28 @@ namespace Server.modules
                             string[] splitMsg = handshake.Split("\r\n");
 
 
-
+                            Send("ping");
                             //Database db = new Database();
 
-                            switch (splitMsg[0])
-                            {
-                                //case "GET ALL COMPETITIONS":
+                            //switch (splitMsg[0])
+                            //{
+                            //    //case "GET ALL COMPETITIONS":
 
-                                //    List<CompetitionWithUser> comp = db.GetAllCompetitions();
-                                //    int i = 0;
-                                //    foreach (CompetitionWithUser c in comp)
-                                //    {
-                                //        i++;
-                                //    }
+                            //    //    List<CompetitionWithUser> comp = db.GetAllCompetitions();
+                            //    //    int i = 0;
+                            //    //    foreach (CompetitionWithUser c in comp)
+                            //    //    {
+                            //    //        i++;
+                            //    //    }
 
-                                //    string json = JsonConvert.SerializeObject(comp);
-                                //    Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
+                            //    //    string json = JsonConvert.SerializeObject(comp);
+                            //    //    Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
 
-                                //    break;
+                            //    //    break;
 
-                                default:
-                                    break;
-                            }
+                            //    default:
+                            //        break;
+                            //}
                         }
 
                     }
@@ -266,3 +266,7 @@ namespace Server.modules
         }
     }
 }
+
+//next time I decide to make a web / server connection, please redo everything instead of using this old code.
+//this is overcomplicated and not beautiful in the slightest.
+//please use good libraries, they exist!
