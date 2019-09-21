@@ -14,13 +14,11 @@ namespace Server.modules
         {
             public int ID { get; set; }
             public string Name { get; set; }
-
             public List<DataPoint> DataPoints { get; set; }
         }
         public class DataPoint
         {
-            public int UserID { get; set; }
-            [ForeignKey("UserID")]
+            public int ID { get; set; }
             public DateTime Time { get; set; }
             public float Value { get; set; }
 
@@ -44,12 +42,9 @@ namespace Server.modules
                 Config c = new Config();
                 JsonConvert.PopulateObject(text, c);
 
-                return @"server=" + c.Server + ";user id=" + c.User + ";password=" + c.Password + ";initial catalog=" + c.Database + ";";
-                //return "Server=" + c.Server + /*"; port=" + c.Port +*/ "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password + /*"; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime + */";";
-                //"Server=yourservername;Database=replacethisstring;User ID=youruserid;Password=yourpassword;TrustServerCertificate=True;Trusted_Connection=False;Connection Timeout=30;Integrated Security=False;Persist Security Info=False;Encrypt=True;MultipleActiveResultSets=True;"
-                //return "Data Source=" + c.Server +/* ";Port=" + c.Port +*/ ";Initial Catalog=" + c.Database + ";persist security info=True;user id=" + c.User + ";password=" + c.Password + ";";
+                //return @"server=" + c.Server + ";user id=" + c.User + ";password=" + c.Password + ";initial catalog=" + c.Database + ";";
+                return "Server=" + c.Server + /*"; port=" + c.Port +*/ "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password + "; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime + ";";
 
-                //"Data Source=127.0.0.1;Initial Catalog=mydb;persist security info=True;user id=sa;password=*****"
 
             }
         }

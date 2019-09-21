@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using static Server.modules.Classes;
 
 namespace Server.modules
 {
@@ -151,28 +152,21 @@ namespace Server.modules
                             string[] splitMsg = handshake.Split("\r\n");
 
 
-                            Send("ping");
-                            //Database db = new Database();
+                            Database db = new Database();
 
-                            //switch (splitMsg[0])
-                            //{
-                            //    //case "GET ALL COMPETITIONS":
+                            switch (splitMsg[0])
+                            {
+                                case "Track":
 
-                            //    //    List<CompetitionWithUser> comp = db.GetAllCompetitions();
-                            //    //    int i = 0;
-                            //    //    foreach (CompetitionWithUser c in comp)
-                            //    //    {
-                            //    //        i++;
-                            //    //    }
+                                    List<User> msg = Tracker.TrackerHandler(splitMsg[1]);
 
-                            //    //    string json = JsonConvert.SerializeObject(comp);
-                            //    //    Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
+                                    //    string json = JsonConvert.SerializeObject(comp);
+                                    //    Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
 
-                            //    //    break;
-
-                            //    default:
-                            //        break;
-                            //}
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
 
                     }

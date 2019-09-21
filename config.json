@@ -3,5 +3,7 @@
    "port": "3306",
    "database": "kattis",
    "user": "stig",
-   "password": "fmer14"
+   "password": "fmer14",
+   "AllowZeroDatetime": "true",
+   "ConvertZeroDatetime": "true"
 }

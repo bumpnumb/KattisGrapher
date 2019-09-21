@@ -23,12 +23,12 @@ namespace Server.modules
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.ID);
-                entity.Property(e => e.Name).IsRequired();
                 entity.HasMany(e => e.DataPoints);
+                entity.Property(e => e.Name).IsRequired();
             });
             modelBuilder.Entity<DataPoint>(entity =>
             {
-                entity.HasKey(e => e.UserID);
+                entity.HasKey(e => e.ID);
                 entity.Property(e => e.Time).IsRequired();
                 entity.Property(e => e.Value).IsRequired();
             });

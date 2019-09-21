@@ -21,10 +21,24 @@ namespace Server.modules
         //}
 
         public List<User> GetUsersByName(List<string> names)
-        {            
+        {
             using (var context = new UserContext())
             {
-                return new List<User>(context.Users.Where(user => names.Contains(user.Name)));
+                //return new List<User>(context.Users.Where(user => names.Contains(user.Name)).SelectMany(user => context.DataPoints.Where(dp => dp.UserID == user.ID)));
+
+                return new List<User>(context.Users.Where(user => names.Contains(user.Name))
+                    .Select(user => new User
+                    {
+                        ID = user.ID,
+                        Name = user.Name,
+                        DataPoints = context.DataPoints.Select(dp => new DataPoint
+                        {
+                            ID = dp.ID,
+                            Value = dp.Value,
+                            Time = dp.Time
+                        }).Where(dp => dp.ID == user.ID).ToList()
+                    }));
+                //return new List<User>(context.Users.Where(u => names.Contains(u.Name)));
             }
         }
 
