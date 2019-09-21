@@ -7,17 +7,13 @@ namespace Server
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             ClientHandler ch = new ClientHandler();
 
-            Database db = new Database();
-            Console.WriteLine("db launched?");
-            List<string> names = new List<string>();
-            names.Add("Stig");
 
-            List<User> guys = db.GetUsersByName(names);
-            Console.WriteLine(guys[0].Name);
+
+
         }
     }
 }

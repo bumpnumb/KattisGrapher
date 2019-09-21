@@ -26,7 +26,6 @@ namespace Server.modules
                 entity.Property(e => e.Name).IsRequired();
                 entity.HasMany(e => e.DataPoints);
             });
-
             modelBuilder.Entity<DataPoint>(entity =>
             {
                 entity.HasKey(e => e.UserID);
@@ -37,15 +36,9 @@ namespace Server.modules
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
-            //optionsBuilder.UseLoggerFactory(_myLoggerFactory);
-            //db info is in gitignore file.
-            //fetch file and read connectionstring.
-
-
-            config c = new config();
+            Config c = new Config();
             string fp = "..\\..\\..\\..\\.\\config.json";
-            optionsBuilder.UseSqlServer(c.Read(fp));
+            optionsBuilder.UseMySQL(c.Read(fp));
         }
     }
 }
