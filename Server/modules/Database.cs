@@ -24,8 +24,6 @@ namespace Server.modules
         {
             using (var context = new UserContext())
             {
-                //return new List<User>(context.Users.Where(user => names.Contains(user.Name)).SelectMany(user => context.DataPoints.Where(dp => dp.UserID == user.ID)));
-
                 return new List<User>(context.Users.Where(user => names.Contains(user.Name))
                     .Select(user => new User
                     {
@@ -38,7 +36,6 @@ namespace Server.modules
                             Time = dp.Time
                         }).Where(dp => dp.ID == user.ID).ToList()
                     }));
-                //return new List<User>(context.Users.Where(u => names.Contains(u.Name)));
             }
         }
 
