@@ -38,6 +38,23 @@ namespace Server.modules
                     }));
             }
         }
+        public void StartTrackingByName(List<string> names)
+        {
+            using (var context = new UserContext())
+            {
+                context.Database.EnsureCreated();
+                foreach (string name in names)
+                {
+                    User newuser = new User();
+                    newuser.Name = name;
+                    context.Add(newuser);
+                }
+                context.SaveChanges();
+            }
+        }
+
+
+
 
     }
 }

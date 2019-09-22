@@ -29,12 +29,8 @@ namespace Server.modules
 
             if (wanted.Count != 0)
             {
-                //StartTracking(wanted);
-
-                //add wanted to users in db
-
+                db.StartTrackingByName(wanted);
             }
-
 
             return trackedUsers;
         }
