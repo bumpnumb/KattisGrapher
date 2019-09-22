@@ -19,6 +19,7 @@ namespace Server.modules
         public class DataPoint
         {
             public int ID { get; set; }
+            public int UserID { get; set; }
             public DateTime Time { get; set; }
             public float Value { get; set; }
 
@@ -43,7 +44,7 @@ namespace Server.modules
                 JsonConvert.PopulateObject(text, c);
 
                 //return @"server=" + c.Server + ";user id=" + c.User + ";password=" + c.Password + ";initial catalog=" + c.Database + ";";
-                return "Server=" + c.Server + /*"; port=" + c.Port +*/ "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password + "; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime + ";";
+                return "Server=" + c.Server + /*"; port=" + c.Port +*/ "; database=" + c.Database + "; user=" + c.User + "; password=" + c.Password +  "; Allow Zero Datetime=" + c.AllowZeroDatetime + "; Convert Zero Datetime=" + c.ConvertZeroDatetime +  ";";
 
 
             }
