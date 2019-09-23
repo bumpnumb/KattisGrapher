@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\KattisGrapher\\Server\\Server.csproj": {}
+    "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\Git\\KattisGrapher\\Server\\Server.csproj": {
+    "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\KattisGrapher\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\Git\\KattisGrapher\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\fennh\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\KattisGrapher\\Server\\obj\\",
+        "outputPath": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\fennh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -48,6 +50,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[2.2.6, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.NETCore.App": {
               "target": "Package",

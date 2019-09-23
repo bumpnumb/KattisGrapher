@@ -12,6 +12,7 @@ namespace Server
             ClientHandler ch = new ClientHandler();
 
 
+            Tracker.Track();
 
 
         }
