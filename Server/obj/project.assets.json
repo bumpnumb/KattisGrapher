@@ -5886,26 +5886,23 @@
   },
   "packageFolders": {
     "C:\\Users\\fennh\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj",
+      "projectUniqueName": "D:\\Git\\KattisGrapher\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\Server.csproj",
+      "projectPath": "D:\\Git\\KattisGrapher\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\fennh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fennh\\Documents\\GitHub\\KattisGrapher\\Server\\obj\\",
+      "outputPath": "D:\\Git\\KattisGrapher\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\fennh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
