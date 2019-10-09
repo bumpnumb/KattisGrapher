@@ -14,6 +14,13 @@ socket.onmessage = function (e) {
     }
     console.log("Recieved: " + str);
 
+    var coptions = new ChartOptions(str);
+
+    var chart = new ApexCharts(document.querySelector("#timeline-chart"), coptions.options);
+
+    chart.render();
+
+
 };
 
 socket.onerror = function (err) {
