@@ -49,7 +49,8 @@ body {
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #428469;
+    font-size: 20px;
 }
 
     .searchTerm:focus {
@@ -75,4 +76,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+i{
+    color: white;
 }
