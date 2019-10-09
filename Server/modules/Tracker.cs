@@ -14,6 +14,7 @@ namespace Server.modules
     class Tracker
     {
         public static int lastHour = DateTime.Now.Hour;
+        
 
 
         public static List<User> TrackerHandler(string msg)
@@ -45,21 +46,24 @@ namespace Server.modules
 
         public Tracker()
         {
+            Console.WriteLine("Tracker has started");
             Thread timerThread = new Thread(Timer);
             timerThread.Start();
         }
 
         public void Timer()
         {
+            lastHour--;
             //every 60 seconds, check if a new hour has begun.
+            Console.WriteLine("Timer Thread has started");
 
             while (true)
             {
                 if (TrackTimer())
                 {
-
+                    Track();
                 }
-                Thread.Sleep(60000);
+                Thread.Sleep(1000);
             }
         }
 
@@ -82,13 +86,27 @@ namespace Server.modules
             foreach (User user in users)
             {
                 Console.WriteLine("Launching Scraper for User " + user.Name);
-                var task = Task.Run(() => Scraper(user));
+                //var task = Task.Run(() => Scraper(user));
+
+                Task<string> t = Scraper(user);
+                t.Wait();
+                string body = t.Result;
+
+                if (body != "error")
+                {
+                    Parse(user, body);
+                }
+                else
+                {
+                    Console.WriteLine("Could not retrieve score for user " + user.Name);
+                }
+                Thread.Sleep(1000);
             }
         }
 
         public static void Parse(User user, string text)
         {
-            //Console.WriteLine(text);
+            //parsing body to find score
 
             int last = text.LastIndexOf("<td>");
 
@@ -102,7 +120,10 @@ namespace Server.modules
 
             float score = float.Parse(sub, CultureInfo.InvariantCulture);
 
-            if (score != user.DataPoints[0].Value)
+            // end parsing
+
+            // first check is user has no datapaints, then check if highest score is not same as fetched (its sorted as highest score = lowest index)
+            if (user.DataPoints.Count == 0 || score != user.DataPoints[0].Value) 
             {
                 Console.WriteLine("User " + user.Name + " has a new score of " + score);
 
@@ -110,15 +131,16 @@ namespace Server.modules
                 db.AddDataPoint(user, score);
             }
             else
-                Console.WriteLine("User " + user.Name + " has a new score of " + score);
-
+                Console.WriteLine("User " + user.Name + " has a unchanged score of " + score);
         }
 
 
         static readonly HttpClient client = new HttpClient();
 
-        public static async Task Scraper(User user)
+        public static async Task<string> Scraper(User user)
         {
+            Console.WriteLine("Launched task for user " + user.Name);
+
             // Call asynchronous network methods in a try/catch block to handle exceptions.
             try
             {
@@ -128,12 +150,13 @@ namespace Server.modules
                 // Above three lines can be replaced with new helper method below
                 // string responseBody = await client.GetStringAsync(uri);
 
-                Parse(user, responseBody);
+                return responseBody;
             }
             catch (HttpRequestException e)
             {
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
+                return "error";
             }
         }
 
