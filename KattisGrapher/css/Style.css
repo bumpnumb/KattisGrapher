@@ -14,3 +14,8 @@
     opacity: 1;
     border: 0;
 }
+
+#title_holder {
+    padding-left: 40px;
+    font-size: 30px;
+}
