@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -160,8 +161,9 @@ namespace Server.modules
 
                                     List<User> msg = Tracker.TrackerHandler(splitMsg[1]);
 
-                                    //    string json = JsonConvert.SerializeObject(comp);
-                                    //    Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
+                                    string json = JsonConvert.SerializeObject(msg);
+                                    //Send("{\"Type\":\"CompetitionWithUser\",\"Num\":" + i + ",\"Data\":" + json + '}');
+                                    Send(json);
 
                                     break;
                                 default:

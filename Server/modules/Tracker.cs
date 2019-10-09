@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Timers;
 using static Server.modules.Classes;
 
@@ -12,6 +13,9 @@ namespace Server.modules
 {
     class Tracker
     {
+        public static int lastHour = DateTime.Now.Hour;
+
+
         public static List<User> TrackerHandler(string msg)
         {
             Database db = new Database();
@@ -39,15 +43,35 @@ namespace Server.modules
             return trackedUsers;
         }
 
-        public static int lastHour = DateTime.Now.Hour;
+        public Tracker()
+        {
+            Thread timerThread = new Thread(Timer);
+            timerThread.Start();
+        }
 
-        public static void TrackTimer(object source, ElapsedEventArgs e)
+        public void Timer()
+        {
+            //every 60 seconds, check if a new hour has begun.
+
+            while (true)
+            {
+                if (TrackTimer())
+                {
+
+                }
+                Thread.Sleep(60000);
+            }
+        }
+
+
+        public static bool TrackTimer()
         {
             if (lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
             {
                 lastHour = DateTime.Now.Hour;
-                Track();
+                return true;
             }
+            return false;
         }
 
         public static void Track()
@@ -57,6 +81,7 @@ namespace Server.modules
 
             foreach (User user in users)
             {
+                Console.WriteLine("Launching Scraper for User " + user.Name);
                 var task = Task.Run(() => Scraper(user));
             }
         }
@@ -79,9 +104,14 @@ namespace Server.modules
 
             if (score != user.DataPoints[0].Value)
             {
+                Console.WriteLine("User " + user.Name + " has a new score of " + score);
+
                 Database db = new Database();
                 db.AddDataPoint(user, score);
             }
+            else
+                Console.WriteLine("User " + user.Name + " has a new score of " + score);
+
         }
 
 

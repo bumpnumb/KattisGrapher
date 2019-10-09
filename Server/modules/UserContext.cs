@@ -42,8 +42,8 @@ namespace Server.modules
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseLoggerFactory(loggerFactory)  //tie-up DbContext with LoggerFactory object
-    .EnableSensitiveDataLogging();
+    //        optionsBuilder.UseLoggerFactory(loggerFactory)  //tie-up DbContext with LoggerFactory object
+    //.EnableSensitiveDataLogging();
 
             Config c = new Config();
             string fp = "..\\..\\..\\..\\.\\config.json";
