@@ -14,7 +14,8 @@ namespace Server.modules
     class Tracker
     {
         public static int lastHour = DateTime.Now.Hour;
-        
+
+        static readonly HttpClient client = new HttpClient();
 
 
         public static List<User> TrackerHandler(string msg)
@@ -134,7 +135,6 @@ namespace Server.modules
         }
 
 
-        static readonly HttpClient client = new HttpClient();
 
         public static async Task<string> Scraper(User user)
         {
