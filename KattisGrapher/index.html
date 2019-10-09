@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Kattis Score Grapher</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
@@ -15,7 +16,16 @@
             </p>
         </div>
 
-        <div class="graph_holder">
+        <div class="search_wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="graph_holder hidden">
             <div id="chart">
                 <div id="timeline-chart"></div>
             </div>

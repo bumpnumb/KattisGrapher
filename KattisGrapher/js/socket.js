@@ -14,10 +14,16 @@ socket.onmessage = function (e) {
     }
     console.log("Recieved: " + str);
 
+
+
+
+
     var coptions = new ChartOptions(str);
 
     var chart = new ApexCharts(document.querySelector("#timeline-chart"), coptions.options);
 
+
+    document.getElementsByClassName("graph_holder")[0].classList.remove("hidden");
     chart.render();
 
 
