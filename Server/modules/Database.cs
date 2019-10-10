@@ -68,7 +68,7 @@ namespace Server.modules
             using (var context = new UserContext())
             {
                 string commandText = @"INSERT INTO `kattis`.`DataPoints` (`Time`, `Value`, `UserID`) VALUES({0},{1},{2})";
-                int n = context.Database.ExecuteSqlCommand(commandText, Helper.RoundedHour(DateTime.Now).ToString(), Score, u.ID);
+                int n = context.Database.ExecuteSqlCommand(commandText, Helper.ConvertToMySQLFormat(Helper.RoundedHour(DateTime.Now)), Score, u.ID);
             }
         }
 
