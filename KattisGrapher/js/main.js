@@ -5,8 +5,6 @@
     var x = document.getElementById("chart");
     x.style.maxWidth = w + "px";
 
-
-
     //var chart = new ApexCharts(document.querySelector("#timeline-chart"), options);
 
     //chart.render();
@@ -28,6 +26,7 @@ searchBar.addEventListener("keyup", function (event) {
 
 searchButton.addEventListener("click", function (event) {
     document.getElementsByClassName("search_wrap")[0].classList.add("top");
+    localStorage.setItem('Username', searchBar.value);
     sendTextMessage("Track\r\n" + searchBar.value);
 });
 

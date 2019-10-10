@@ -3,7 +3,7 @@
 class ChartOptions {
     options = {
         chart: {
-            type: "area",
+            type: "line",
             height: 400,
             foreColor: "#999",
             scroller: {

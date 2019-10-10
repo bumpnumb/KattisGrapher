@@ -3,7 +3,13 @@ var socket = new WebSocket("ws://127.0.0.1:80");
 
 socket.onopen = function (openEvent) {
     console.log("Socket connection is open.");
-    sendTextMessage("ping");
+    var local = localStorage.getItem('Username');
+
+    if (local !== null) {
+        console.log(local);
+        document.getElementsByClassName("search_wrap")[0].classList.add("top");
+        sendTextMessage("Track\r\n" + local);
+    }
 };
 
 socket.onmessage = function (e) {
@@ -27,7 +33,6 @@ function sendTextMessage(message) {
         return;
     }
     socket.send(message);
-    console.log("Sent: " + message);
 }
 
 window.onbeforeunload = function () {
