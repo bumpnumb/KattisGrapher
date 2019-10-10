@@ -12,21 +12,9 @@ socket.onmessage = function (e) {
         val = e.data[i + 4] + e.data[i + 6] + e.data[i] + e.data[i + 2] + "";
         str += String.fromCharCode(parseInt(val, 16));
     }
-    console.log("Recieved: " + str);
+    var options = new ChartOptions(str);
 
-
-
-
-
-    var coptions = new ChartOptions(str);
-
-    var chart = new ApexCharts(document.querySelector("#timeline-chart"), coptions.options);
-
-
-    document.getElementsByClassName("graph_holder")[0].classList.remove("hidden");
-    chart.render();
-
-
+    DrawChart(options);
 };
 
 socket.onerror = function (err) {
