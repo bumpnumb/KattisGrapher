@@ -100,7 +100,7 @@ namespace Server.modules
                 {
                     Console.WriteLine("Could not retrieve score for user " + user.Name);
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(4000);
             }
         }
 
