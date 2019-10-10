@@ -46,7 +46,7 @@ namespace Server.modules
     //.EnableSensitiveDataLogging();
 
             Config c = new Config();
-            string fp = "..\\..\\..\\..\\.\\config.json";
+            string fp = "config.json";
             optionsBuilder.UseMySQL(c.Read(fp));
         }
     }

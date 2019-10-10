@@ -1,5 +1,5 @@
 ﻿var host = window.location.origin.replace("http", "ws");
-var socket = new WebSocket("ws://127.0.0.1:80");
+var socket = new WebSocket("ws://188.148.241.118:1337");
 
 socket.onopen = function (openEvent) {
     console.log("Socket connection is open.");

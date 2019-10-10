@@ -13,7 +13,7 @@ namespace Server.modules
 {
     class ClientHandler
     {
-        static TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 80);
+        static TcpListener server = new TcpListener(IPAddress.Parse("0.0.0.0"), 1337);
         static TcpClient client = default(TcpClient);
         CancellationTokenSource TokenSource;
 
@@ -36,6 +36,7 @@ namespace Server.modules
 
         public void acceptClient(object obj)
         {
+            Console.WriteLine("Accepting clients");
             while (true)
             {
                 client = server.AcceptTcpClient();

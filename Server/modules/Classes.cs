@@ -40,6 +40,7 @@ namespace Server.modules
             public string Read(string filepath)
             {
                 string text = File.ReadAllText(filepath);
+
                 Config c = new Config();
                 JsonConvert.PopulateObject(text, c);
 

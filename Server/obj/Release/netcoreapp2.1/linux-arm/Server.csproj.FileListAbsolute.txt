@@ -1,0 +1,10 @@
+D:\Git\KattisGrapher\Server\bin\Release\netcoreapp2.1\linux-arm\Server.deps.json
+D:\Git\KattisGrapher\Server\bin\Release\netcoreapp2.1\linux-arm\Server.runtimeconfig.json
+D:\Git\KattisGrapher\Server\bin\Release\netcoreapp2.1\linux-arm\Server.runtimeconfig.dev.json
+D:\Git\KattisGrapher\Server\bin\Release\netcoreapp2.1\linux-arm\Server.dll
+D:\Git\KattisGrapher\Server\bin\Release\netcoreapp2.1\linux-arm\Server.pdb
+D:\Git\KattisGrapher\Server\obj\Release\netcoreapp2.1\linux-arm\Server.csproj.CoreCompileInputs.cache
+D:\Git\KattisGrapher\Server\obj\Release\netcoreapp2.1\linux-arm\Server.AssemblyInfoInputs.cache
+D:\Git\KattisGrapher\Server\obj\Release\netcoreapp2.1\linux-arm\Server.AssemblyInfo.cs
+D:\Git\KattisGrapher\Server\obj\Release\netcoreapp2.1\linux-arm\Server.dll
+D:\Git\KattisGrapher\Server\obj\Release\netcoreapp2.1\linux-arm\Server.pdb
