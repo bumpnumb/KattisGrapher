@@ -54,6 +54,7 @@ namespace Server.modules
 
         public void Timer()
         {
+            lastHour = -1;
             //every 60 seconds, check if a new hour has begun.
             Console.WriteLine("Timer Thread has started");
 
